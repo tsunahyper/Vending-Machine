@@ -27,34 +27,5 @@ option = [
                 "ItemPrice":3
             }
         ]
-    },
-    {
-        "Snacks": [
-            {
-                "ItemID":201,
-                "ItemName":"Snickers",
-                "ItemPrice":5
-            },
-            {
-                "ItemID":202,
-                "ItemName":"Lays",
-                "ItemPrice":4
-            },
-            {
-                "ItemID":203,
-                "ItemName":"Kit Kat",
-                "ItemPrice":3
-            },
-            {
-                "ItemID":204,
-                "ItemName":"Mars",
-                "ItemPrice":3
-            },
-            {
-                "ItemID":205,
-                "ItemName":"Oreo",
-                "ItemPrice":2
-            }
-        ]
     }
 ]

@@ -63,12 +63,13 @@ def interface(*args):
         exit()
     else:
         print("Please enter a valid choice")
-        interface()
+        interface(*args)
 
 
 def displaydrinks(choose_drink):
     get_drinks = item.option[0]["Drinks"]
     os.system('clear')
+    print("Please choose a drink:")
     for i in get_drinks:
         print(f"({i['ItemID']}) {i['ItemName']} - ${i['ItemPrice']}")
     print("\n\nPlease enter your choice: ")
@@ -76,23 +77,23 @@ def displaydrinks(choose_drink):
     if choice in [111, 112, 113, 114, 115]:
         choose_drink.append(choice)
         print(f"You have selected {get_drinks[choice - 111]['ItemName']}")
+        os.system('clear')
+        print("Would you like to add another item?")
+        print("(1) Yes")
+        print("(2) No")
+        print("Please enter your choice: ")
+        add_another = int(input())
+        if add_another == 1:
+            displaydrinks(choose_drink)  # Loop back for more selections
+        elif add_another == 2:
+            interface(choose_drink)  # Proceed to payment or exit
+        else:
+            print("Please enter a valid choice")
+            interface(choose_drink)  # Return to main menu if choice is invalid
     else:
         print("Please enter a valid choice")
         displaydrinks(choose_drink)
-    os.system('clear')
-    print("Would you like to add another item?")
-    print("(1) Yes")
-    print("(2) No")
-    print("Please enter your choice: ")
-    choice = int(input())
-    if choice == 1:
-        displaydrinks(choose_drink)
-    elif choice == 2:
-        interface(choose_drink)
-    else:
-        print("Please enter a valid choice")
-        displaydrinks(choose_drink)
-    
+
 
 def calculate_total(total_drink):
     total_price = 0
